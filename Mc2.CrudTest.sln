@@ -11,6 +11,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Presentation.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.AcceptanceTests", "Mc2.CrudTest.AcceptanceTests\Mc2.CrudTest.AcceptanceTests.csproj", "{6776DF76-1054-486C-A79A-57100C47032F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{001AF088-0DB6-4BCC-9D18-80C9B3F7642D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C6EDD34B-9585-4800-8652-B6B13AD6021D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Domain", "src\Mc2.CrudTest.Domain\Mc2.CrudTest.Domain.csproj", "{95E4A52B-534C-406E-B49A-7D3D5C2C1B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Application", "src\Mc2.CrudTest.Application\Mc2.CrudTest.Application.csproj", "{5773DBB1-28EE-4BB4-976A-FBE46332CBC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Infrastructure", "src\Mc2.CrudTest.Infrastructure\Mc2.CrudTest.Infrastructure.csproj", "{55AD2612-9B03-4819-B9E5-F755C880F55E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Web", "src\Mc2.CrudTest.Web\Mc2.CrudTest.Web.csproj", "{8BBC992A-8B41-4C91-8EFB-F383812A02B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Tests", "tests\Mc2.CrudTest.Tests\Mc2.CrudTest.Tests.csproj", "{31131D9C-6AD3-4D6E-ABB3-0A7C64DC788F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,11 +47,38 @@ Global
 		{6776DF76-1054-486C-A79A-57100C47032F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6776DF76-1054-486C-A79A-57100C47032F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6776DF76-1054-486C-A79A-57100C47032F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E4A52B-534C-406E-B49A-7D3D5C2C1B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E4A52B-534C-406E-B49A-7D3D5C2C1B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E4A52B-534C-406E-B49A-7D3D5C2C1B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E4A52B-534C-406E-B49A-7D3D5C2C1B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5773DBB1-28EE-4BB4-976A-FBE46332CBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5773DBB1-28EE-4BB4-976A-FBE46332CBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5773DBB1-28EE-4BB4-976A-FBE46332CBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5773DBB1-28EE-4BB4-976A-FBE46332CBC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55AD2612-9B03-4819-B9E5-F755C880F55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AD2612-9B03-4819-B9E5-F755C880F55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AD2612-9B03-4819-B9E5-F755C880F55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AD2612-9B03-4819-B9E5-F755C880F55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BBC992A-8B41-4C91-8EFB-F383812A02B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BBC992A-8B41-4C91-8EFB-F383812A02B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BBC992A-8B41-4C91-8EFB-F383812A02B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BBC992A-8B41-4C91-8EFB-F383812A02B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31131D9C-6AD3-4D6E-ABB3-0A7C64DC788F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31131D9C-6AD3-4D6E-ABB3-0A7C64DC788F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31131D9C-6AD3-4D6E-ABB3-0A7C64DC788F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31131D9C-6AD3-4D6E-ABB3-0A7C64DC788F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B5A26C9-68C1-49D9-9F32-AF907A1730C2}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{95E4A52B-534C-406E-B49A-7D3D5C2C1B21} = {001AF088-0DB6-4BCC-9D18-80C9B3F7642D}
+		{5773DBB1-28EE-4BB4-976A-FBE46332CBC7} = {001AF088-0DB6-4BCC-9D18-80C9B3F7642D}
+		{55AD2612-9B03-4819-B9E5-F755C880F55E} = {001AF088-0DB6-4BCC-9D18-80C9B3F7642D}
+		{8BBC992A-8B41-4C91-8EFB-F383812A02B0} = {001AF088-0DB6-4BCC-9D18-80C9B3F7642D}
+		{31131D9C-6AD3-4D6E-ABB3-0A7C64DC788F} = {C6EDD34B-9585-4800-8652-B6B13AD6021D}
 	EndGlobalSection
 EndGlobal
