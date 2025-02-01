@@ -49,7 +49,7 @@ public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCo
         {
             var phoneUtil = PhoneNumberUtil.GetInstance();
             var number = phoneUtil.Parse(phoneNumber, null);
-            return phoneUtil.IsValidNumber(number) && phoneUtil.GetNumberType(number) == PhoneNumberType.MOBILE;
+            return phoneUtil.IsValidNumber(number);
         }
         catch
         {
