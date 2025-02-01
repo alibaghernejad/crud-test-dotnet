@@ -2,7 +2,7 @@ using FluentValidation;
 using Mc2.CrudTest.Domain.Interfaces;
 using PhoneNumbers;
 
-namespace Mc2.CrudTest.Application.Commands.Create;
+namespace Mc2.CrudTest.Application.Customers.Create;
 
 public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCommand>
 {

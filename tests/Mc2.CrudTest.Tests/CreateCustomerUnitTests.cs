@@ -1,16 +1,16 @@
-using Mc2.CrudTest.Application.Commands.Create;
 using FluentValidation.TestHelper;
+using Mc2.CrudTest.Application.Customers.Create;
 using Mc2.CrudTest.Domain.Interfaces;
 using Moq;
 
 namespace Mc2.CrudTest.Tests;
 
-public class CustomerUnitTests
+public class CreateCustomerUnitTests
 {
     private readonly CreateCustomerCommandValidator _validator;
     private readonly Mock<ICustomerRepository> _customerRepositoryMock;
     
-    public CustomerUnitTests()
+    public CreateCustomerUnitTests()
     {
         _customerRepositoryMock = new Mock<ICustomerRepository>();
 

@@ -1,7 +1,8 @@
 using Ardalis.Result;
-namespace Mc2.CrudTest.Application.Commands.Create;
 using Ardalis.SharedKernel;
-using Domain.CustomerAggregate;
+using Mc2.CrudTest.Domain.CustomerAggregate;
+
+namespace Mc2.CrudTest.Application.Customers.Create;
 
 public record CreateCustomerCommand(
     string FirstName,
