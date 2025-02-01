@@ -43,7 +43,7 @@ namespace Mc2.CrudTest.Infrastructure.Configurations
             // BankAccountNumber: VARCHAR(20) NOT NULL
             builder.Property(c => c.BankAccountNumber)
                 .IsRequired()
-                .HasMaxLength(20)
+                .HasMaxLength(34)
                 .IsUnicode(false);
 
             // Unique constraint on (FirstName, LastName, DateOfBirth)

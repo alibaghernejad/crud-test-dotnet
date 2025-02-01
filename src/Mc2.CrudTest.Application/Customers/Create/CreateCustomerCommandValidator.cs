@@ -36,7 +36,8 @@ public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCo
 
         RuleFor(c => c.BankAccountNumber)
             .NotEmpty().WithMessage("Bank account number is required.")
-            .Matches(@"^\d{10,18}$").WithMessage("Invalid bank account number format (must be 10-18 digits).");
+            .Matches(@"^[A-Z]{2}\d{2}[A-Z0-9]{10,30}$")
+            .WithMessage("Invalid IBAN format (must start with 2 letters, followed by 2 digits, then 10-30 alphanumeric characters).");
 
         RuleFor(c => c)
             .Must(BeUniqueCustomer).WithMessage("Customer with the same FirstName, LastName, and DateOfBirth already exists.");
