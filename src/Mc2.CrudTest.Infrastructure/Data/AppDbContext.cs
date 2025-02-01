@@ -9,11 +9,12 @@ public class AppDbContext(DbContextOptions<AppDbContext> options,
 {
     private readonly IDomainEventDispatcher? _dispatcher = dispatcher;
 
-    public DbSet<Customer> Contributors => Set<Customer>();
+    public DbSet<Customer> Customers => Set<Customer>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        // Apply all configurations from the current assembly
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 
