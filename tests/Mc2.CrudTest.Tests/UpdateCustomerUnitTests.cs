@@ -3,6 +3,7 @@ using AutoMapper;
 using Mc2.CrudTest.Application.Customers.Get;
 using Mc2.CrudTest.Application.Customers.Update;
 using Mc2.CrudTest.Domain.CustomerAggregate;
+using MediatR;
 using Moq;
 
 namespace Mc2.CrudTest.Tests
@@ -11,16 +12,17 @@ namespace Mc2.CrudTest.Tests
     {
         private readonly UpdateCustomerCommandValidator _validator;
         private readonly Mock<IMapper> _mapperMock;
+        private readonly Mock<IMediator> _mediaterMock;
         private readonly Mock<IRepository<Customer>> _repositoryMock;
         private readonly UpdateCustomerCommandHandler _handler;
 
         public UpdateCustomerUnitTests()
         {
             _repositoryMock = new Mock<IRepository<Customer>>();
-
+            _mediaterMock = new Mock<IMediator>();
             _validator = new UpdateCustomerCommandValidator();
             _mapperMock = new Mock<IMapper>();
-            _handler = new UpdateCustomerCommandHandler(_repositoryMock.Object, _mapperMock.Object);
+            _handler = new UpdateCustomerCommandHandler(_repositoryMock.Object, _mapperMock.Object, _mediaterMock.Object);
         }
 
         [Fact]

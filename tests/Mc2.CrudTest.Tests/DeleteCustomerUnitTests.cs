@@ -3,6 +3,7 @@ using FluentAssertions;
 using Mc2.CrudTest.Application.Customers.Delete;
 using Mc2.CrudTest.Application.Services;
 using Mc2.CrudTest.Domain.CustomerAggregate;
+using MediatR;
 using Moq;
 
 namespace Mc2.CrudTest.Tests
@@ -12,11 +13,12 @@ namespace Mc2.CrudTest.Tests
         private readonly Mock<IRepository<Customer>> _repositoryMock;
         private readonly DeleteCustomerCommandHandler _handler;
         private readonly CustomerService _customerService;
-
+        private readonly Mock<IMediator> _mediaterMock;
         public DeleteCustomerUnitTests()
         {
             _repositoryMock = new Mock<IRepository<Customer>>();
-            _customerService = new CustomerService(_repositoryMock.Object);
+            _mediaterMock = new Mock<IMediator>();
+            _customerService = new CustomerService(_repositoryMock.Object, _mediaterMock.Object);
             _handler = new DeleteCustomerCommandHandler(_customerService);
         }
 
