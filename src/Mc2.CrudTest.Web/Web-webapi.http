@@ -27,7 +27,7 @@ GET {{Web_HostAddress}}/api/Customers/1
 
 # PUT new Customer
 # PUT a new customer into the system.
-PUT {{Web_HostAddress}}/api/Customers/2
+PUT {{Web_HostAddress}}/api/Customers/1
 Content-Type: application/json
 
 {
@@ -41,5 +41,5 @@ Content-Type: application/json
 
 # Delete new Customer
 # Delete an exists customer
-DELETE {{Web_HostAddress}}/api/Customers/2
+DELETE {{Web_HostAddress}}/api/Customers/1
 Content-Type: application/json
