@@ -1,7 +1,9 @@
 using Ardalis.Result;
 using Ardalis.SharedKernel;
 using Mc2.CrudTest.Domain.CustomerAggregate;
+using Mc2.CrudTest.Domain.CustomerAggregate.Events;
 using Mc2.CrudTest.Domain.Interfaces;
+using MediatR;
 
 namespace Mc2.CrudTest.Application.Services;
 
@@ -10,7 +12,7 @@ namespace Mc2.CrudTest.Application.Services;
 /// and also to demonstrate how to fire domain events from a service.
 /// </summary>
 /// <param name="repository"></param>
-public class CustomerService(IRepository<Customer> repository) : ICustomerService
+public class CustomerService(IRepository<Customer> repository, IMediator mediator) : ICustomerService
 {
     public async Task<Result> DeleteCustomer(int customerId)
     {
@@ -18,6 +20,10 @@ public class CustomerService(IRepository<Customer> repository) : ICustomerServic
         if (aggregateToDelete == null) return Result.NotFound();
 
         await repository.DeleteAsync(aggregateToDelete);
+        
+        var domainEvent = new CustomerDeletedEvent(customerId);
+        await mediator.Publish(domainEvent);
+
         return Result.Success();
     }
 }

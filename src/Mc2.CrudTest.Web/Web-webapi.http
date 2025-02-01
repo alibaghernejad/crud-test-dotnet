@@ -9,11 +9,11 @@ POST {{Web_HostAddress}}/api/Customers
 Content-Type: application/json
 
 {
-  "FirstName": "Ali333",
-  "Lastname": "Baghernejad44",
+  "FirstName": "Ali3333",
+  "Lastname": "Baghernejad444",
   "DateOfBirth": "2024-01-31T15:04:05Z",
   "PhoneNumber": "+14155552671",
-  "Email": "AliBaghernejad33@gmail.com",
+  "Email": "AliBaghernejad2@gmail.com",
   "BankAccountNumber": "DE44500105175407324931"
 }
 
@@ -27,7 +27,7 @@ GET {{Web_HostAddress}}/api/Customers/1
 
 # PUT new Customer
 # PUT a new customer into the system.
-PUT {{Web_HostAddress}}/api/Customers/1
+PUT {{Web_HostAddress}}/api/Customers/17
 Content-Type: application/json
 
 {
@@ -41,5 +41,5 @@ Content-Type: application/json
 
 # Delete new Customer
 # Delete an exists customer
-DELETE {{Web_HostAddress}}/api/Customers/1
+DELETE {{Web_HostAddress}}/api/Customers/18
 Content-Type: application/json

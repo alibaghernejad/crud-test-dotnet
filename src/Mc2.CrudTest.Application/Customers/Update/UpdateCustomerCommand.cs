@@ -4,7 +4,9 @@ using AutoMapper;
 using FluentValidation.Results;
 using Mc2.CrudTest.Application.Customers.Get;
 using Mc2.CrudTest.Domain.CustomerAggregate;
+using Mc2.CrudTest.Domain.CustomerAggregate.Events;
 using Mc2.CrudTest.Domain.Specifications;
+using MediatR;
 
 namespace Mc2.CrudTest.Application.Customers.Update;
 
@@ -16,7 +18,7 @@ public record UpdateCustomerCommand(
     string PhoneNumber)
     : ICommand<Result<CustomerDto>>;
 
-public class UpdateCustomerCommandHandler(IRepository<Customer> repository, IMapper mapper)
+public class UpdateCustomerCommandHandler(IRepository<Customer> repository, IMapper mapper, IMediator mediator)
     : ICommandHandler<UpdateCustomerCommand, Result<CustomerDto>>
 {
     public async Task<Result<CustomerDto>> Handle(UpdateCustomerCommand request,
@@ -44,6 +46,10 @@ public class UpdateCustomerCommandHandler(IRepository<Customer> repository, IMap
         existingCustomer.PhoneNumber = request.PhoneNumber;
 
         await repository.UpdateAsync(existingCustomer, cancellationToken);
+        
+        var domainEvent = new CustomerUpdatedEvent(existingCustomer.Id);
+        await mediator.Publish(domainEvent, cancellationToken);
+        
         return mapper.Map<CustomerDto>(existingCustomer);
     }
 }

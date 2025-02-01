@@ -4,6 +4,7 @@ namespace Mc2.CrudTest.Domain.CustomerAggregate;
 
 public class Customer: EntityBase, IAggregateRoot
 {
+    
     public string FirstName { get; set; }  = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public DateTime DateOfBirth { get; set; }
