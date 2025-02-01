@@ -11,13 +11,10 @@
     <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
     <PackageVersion Include="Azure.Identity" Version="1.13.1" />
     <PackageVersion Include="coverlet.collector" Version="6.0.2" />
-    <PackageVersion Include="FastEndpoints" Version="5.32.0" />
-    <PackageVersion Include="FastEndpoints.ApiExplorer" Version="2.2.0" />
-    <PackageVersion Include="FastEndpoints.Swagger" Version="5.31.0" />
-    <PackageVersion Include="FastEndpoints.Swagger.Swashbuckle" Version="2.2.0" />
     <PackageVersion Include="FluentAssertions" Version="7.0.0" />
     <PackageVersion Include="FluentValidation" Version="11.11.0" />
     <PackageVersion Include="FluentValidation.TestHelper" Version="11.11.0" />
+    <PackageVersion Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Moq" Version="4.20.70" />
     <PackageVersion Include="MailKit" Version="4.9.0" />
     <PackageVersion Include="MediatR" Version="12.4.1" />
