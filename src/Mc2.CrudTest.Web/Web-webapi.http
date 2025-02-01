@@ -1,0 +1,45 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@Web_HostAddress = http://localhost:5236
+
+###
+
+# POST new Customer
+# Post a new customer into the system.
+POST {{Web_HostAddress}}/api/Customers
+Content-Type: application/json
+
+{
+  "FirstName": "Ali333",
+  "Lastname": "Baghernejad44",
+  "DateOfBirth": "2024-01-31T15:04:05Z",
+  "PhoneNumber": "+14155552671",
+  "Email": "AliBaghernejad33@gmail.com",
+  "BankAccountNumber": "DE44500105175407324931"
+}
+
+###
+
+# GET Customer
+# Get the deatilf of an exists customer by its id. 
+GET {{Web_HostAddress}}/api/Customers/1
+
+###
+
+# PUT new Customer
+# PUT a new customer into the system.
+PUT {{Web_HostAddress}}/api/Customers/2
+Content-Type: application/json
+
+{
+  "FirstName": "Ali3",
+  "Lastname": "Baghernejad3",
+  "DateOfBirth": "1989-01-31T15:04:05Z",
+  "PhoneNumber": "+14155552671"
+}
+
+###
+
+# Delete new Customer
+# Delete an exists customer
+DELETE {{Web_HostAddress}}/api/Customers/2
+Content-Type: application/json
