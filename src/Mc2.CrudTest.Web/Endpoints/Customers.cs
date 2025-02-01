@@ -1,5 +1,6 @@
 using Ardalis.Result;
 using Mc2.CrudTest.Application.Customers.Create;
+using Mc2.CrudTest.Application.Customers.Delete;
 using Mc2.CrudTest.Application.Customers.Get;
 using Mc2.CrudTest.Application.Customers.Update;
 using Mc2.CrudTest.Web.Infrastructure;
@@ -16,7 +17,8 @@ public class Customers : EndpointGroupBase
         app.MapGroup(this)
             .MapPost(CreateCustomer)
             .MapGet(GetCustomer, "{id}")
-            .MapPut(UpdateCustomer, "{id}");
+            .MapPut(UpdateCustomer, "{id}")
+            .MapDelete(DeleteCustomer, "{id}");
     }
 
     public async Task<Created<int>> CreateCustomer(ISender sender, CreateCustomerCommand command)
@@ -40,7 +42,7 @@ public class Customers : EndpointGroupBase
     public async Task<IResult> UpdateCustomer(ISender sender, int id, UpdateCustomerCommand request,
         CancellationToken cancellationToken)
     {
-        var result = await sender.Send(request with{CustomerId = id}, cancellationToken);
+        var result = await sender.Send(request with { CustomerId = id }, cancellationToken);
 
         if (result.Status == ResultStatus.NotFound)
             return Results.NotFound();
@@ -51,5 +53,15 @@ public class Customers : EndpointGroupBase
             return Results.NotFound();
 
         return TypedResults.Ok(query.Value);
+    }
+
+    public async Task<IResult> DeleteCustomer(ISender sender, int id,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new DeleteCustomerCommand(id), cancellationToken);
+
+        if (result.Status == ResultStatus.NotFound)
+            return Results.NotFound();
+        return TypedResults.NoContent();
     }
 }

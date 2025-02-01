@@ -1,6 +1,8 @@
 using System.Reflection;
 using FluentValidation;
 using Mc2.CrudTest.Application.Common.Behaviours;
+using Mc2.CrudTest.Application.Services;
+using Mc2.CrudTest.Domain.Interfaces;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,7 +15,7 @@ public static class DependencyInjection
     {
         builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
         builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-
+        builder.Services.AddScoped<ICustomerService, CustomerService>();
         builder.Services.AddMediatR(cfg => {
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));

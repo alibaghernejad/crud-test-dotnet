@@ -15,6 +15,7 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
     <PackageReference Include="FluentValidation" />
     <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
 
   </ItemGroup>
 
@@ -25,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Mc2.CrudTest.Application\Mc2.CrudTest.Application.csproj" />
     <ProjectReference Include="..\..\src\Mc2.CrudTest.Domain\Mc2.CrudTest.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Mc2.CrudTest.Infrastructure\Mc2.CrudTest.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

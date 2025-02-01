@@ -10,6 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Ardalis.SharedKernel" />
     <PackageReference Include="Ardalis.Specification" />
+    <PackageReference Include="Ardalis.Result" />
+
   </ItemGroup>
 
   <ItemGroup>
