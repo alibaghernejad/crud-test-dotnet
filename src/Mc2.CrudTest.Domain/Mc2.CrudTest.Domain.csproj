@@ -7,10 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Ardalis.SharedKernel" />
+    <PackageReference Include="Ardalis.Specification" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Events\" />
     <Folder Include="Exceptions\" />
     <Folder Include="ValueObjects\" />
+    <Folder Include="CustomerAggregate\" />
   </ItemGroup>
 
 </Project>
+

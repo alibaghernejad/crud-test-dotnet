@@ -5,7 +5,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
+    <Folder Include="Commands\Delete\" />
+    <Folder Include="Commands\Get\" />
+    <Folder Include="Commands\List\" />
+    <Folder Include="Commands\Queries\" />
+    <Folder Include="Commands\Update\" />
     <Folder Include="UseCases\" />
   </ItemGroup>
 
