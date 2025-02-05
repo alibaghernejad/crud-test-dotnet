@@ -1,5 +1,5 @@
 # DotNet Crud Test: Clean Architecture
-![crud-dotnet-clean-architecture](https://github.com/user-attachments/assets/7dffd627-a3f0-4f7b-93ba-d43ee1610e6d)
+![crud-dotnet-clean-architecture_latest](https://github.com/user-attachments/assets/869811d3-5408-445d-acd4-170b5a142f62)
 I have completed the **Crud-Test-Dotnet** project as part of the grouped talk process. The project follows **Clean Architecture** principles and incorporates **REPR, CQRS, Event Sourcing**, along with **BDD** and **TDD** in its design and implementation in combine to _PostgreSQL_, _Martendb_ and _Sqlite_. Below are the key details:
 
 - **Architecture:** Clean Architecture, REPR, CQRS, Event Sourcing, BDD, and TDD
